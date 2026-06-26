@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date with My Girlfriend</title>
+    <style>
+        /* --- GAYA DASAR --- */
+        body {
+            background-color: #794c3d; /* Warna coklat sesuai referensi */
+            margin: 0;
+            padding: 0;
+            font-family: 'Times New Roman', serif;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* --- NAVIGASI --- */
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 30px 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            border: 1px solid white;
+            border-radius: 30px;
+            padding: 5px 25px;
+            font-size: 16px;
+            transition: 0.3s;
+            background-color: transparent;
+        }
+
+        nav a.active {
+            background-color: #c9b1a5; /* Warna krem tombol Moment */
+            border-color: #c9b1a5;
+            color: #333;
+        }
+
+        /* --- HEADER / JUDUL UTAMA --- */
+        .main-title {
+            text-align: center;
+            font-size: 3rem;
+            margin: 20px 0 60px 0;
+            font-weight: normal;
+            letter-spacing: 2px;
+            line-height: 1.2;
+        }
+
+        /* --- KONTAINER GALERI (RESPONSIF) --- */
+        .gallery-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding: 0 5%;
+            max-width: 1200px;
+            margin: 0 auto 100px auto;
+            flex-wrap: wrap; /* Kunci biar bisa turun ke bawah di HP */
+        }
+
+        .column {
+            flex: 1;
+            min-width: 300px; /* Di HP nggak akan lebih kecil dari ini, jadi otomatis turun */
+            max-width: 350px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* --- WADAH BUKU & FOTO (TUMPUKAN) --- */
+        .book-wrapper {
+            position: relative;
+            width: 100%;
+            /* Asumsi rasio buku agak kotak/tinggi, kita set padding-bottom untuk proporsi */
+            padding-bottom: 110%; 
+            margin-bottom: 20px;
+        }
+
+        /* Gambar Buku di paling belakang */
+        .book-bg {
+            position: absolute;
+            top: 0;
+            left: 1;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            z-index: 1;
+        }
+
+        /* Gaya Bingkai Polaroid Foto */
+        .polaroid {
+            position: absolute;
+            background: #fff;
+            padding: 6px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            z-index: 2;
+        }
+
+        .polaroid img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* --- POSISI FOTO DI KOLOM 1 --- */
+        .col1-pic1 { top: 25%; left: -5%; width: 40%; height: 40%; transform: rotate(-8deg); z-index: 3; }
+        .col1-pic2 { top: 10%; right: 5%; width: 45%; height: 40%; transform: rotate(5deg); }
+        .col1-pic3 { bottom: -5%; left: 25%; width: 45%; height: 40%; transform: rotate(-2deg); z-index: 4; }
+
+        /* --- POSISI FOTO DI KOLOM 2 --- */
+        .col2-pic1 { top: 5%; left: 5%; width: 45%; height: 40%; transform: rotate(-5deg); z-index: 4; }
+        .col2-pic2 { bottom: 5%; left: 0%; width: 40%; height: 40%; transform: rotate(5deg); }
+        .col2-pic3 { top: 40%; right: 5%; width: 40%; height: 40%; transform: rotate(-4deg); z-index: 3; }
+
+        /* --- POSISI FOTO DI KOLOM 3 --- */
+        .col3-pic1 { top: 5%; left: 5%; width: 45%; height: 35%; transform: rotate(-2deg); }
+        .col3-pic2 { top: 35%; right: 0%; width: 45%; height: 35%; transform: rotate(4deg); z-index: 3;}
+        .col3-pic3 { bottom: -10%; left: -10%; width: 45%; height: 35%; transform: rotate(-5deg); z-index: 4;}
+
+        /* --- TEKS BAWAH KOLOM --- */
+        .text-content {
+            text-align: center;
+        }
+
+        .text-content h2 {
+            font-size: 2rem;
+            margin: 10px 0;
+            font-weight: normal;
+        }
+
+        .text-content p {
+            font-family: sans-serif; /* Pake font simple buat deskripsi */
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: rgba(255, 255, 255, 0.9);
+            margin: 0;
+            padding: 0 10px;
+        }
+
+        /* --- MEDIA QUERIES (UNTUK HP) --- */
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 2.2rem; /* Judul agak dikecilin di HP */
+            }
+            .column {
+                margin-bottom: 50px; /* Jarak antar kolom waktu berjejer ke bawah */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="page2.html">home</a>
+        <a href="#" class="active">Moment</a>
+        <a href="from-bb.html">contact</a>
+    </nav>
+
+    <h1 class="main-title">Date with My<br>Girlfriend</h1>
+
+    <div class="gallery-container">
+
+        <div class="column">
+            <div class="book-wrapper">
+                <img class="book-bg" src="assets/Halaman3/14rm.png" alt="Buku Kiri">
+                
+                <div class="polaroid col1-pic1"><img src="assets/Halaman3/4.jpeg" alt="Foto"></div>
+                <div class="polaroid col1-pic2"><img src="assets/Halaman3/5.jpeg" alt="Foto"></div>
+                <div class="polaroid col1-pic3"><img src="assets/Halaman3/6.jpeg" alt="Foto"></div>
+            </div>
+            
+            <div class="text-content">
+                <h2>Firs Date</h2>
+                <p>This is the moment we met for the first time after getting to know each other for a few weeks.</p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="book-wrapper">
+                <img class="book-bg" src="assets/Halaman3/14rm.png" alt="Buku Tengah">
+                
+                <div class="polaroid col2-pic1"><img src="assets/Halaman3/7.jpeg" alt="Foto"></div>
+                <div class="polaroid col2-pic2"><img src="assets/Halaman3/8.jpeg" alt="Foto"></div>
+                <div class="polaroid col2-pic3"><img src="assets/Halaman3/9.jpeg" alt="Foto"></div>
+            </div>
+            
+            <div class="text-content">
+                <h2>My Girlfriend</h2>
+                <p>At that moment, I gathered the courage to reveal my feelings to her. I intentionally took her to a flower shop, gave her a bouquet, and asked, "Will you be my girlfriend?" And Then she said "yess". After that we are officially a couple.</p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="book-wrapper">
+                <img class="book-bg" src="assets/Halaman3/14rm.png" alt="Buku Kanan">
+                
+                <div class="polaroid col3-pic1"><img src="assets/Halaman3/10.jpeg" alt="Foto"></div>
+                <div class="polaroid col3-pic2"><img src="assets/Halaman3/11.jpeg" alt="Foto"></div>
+                <div class="polaroid col3-pic3"><img src="assets/Halaman3/13.jpeg" alt="Foto"></div>
+            </div>
+            
+            <div class="text-content">
+                <h2>moment</h2>
+                <p>These are all moment of the cutest couple in the word out on a date. I am so happy when I spend time with my girlfre</p>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <style>
+        /* Mengatur background dan gaya dasar */
+        body {
+            background-color: #ff00ff; /* Warna pink magenta terang */
+            margin: 0;
+            padding: 0;
+            font-family: 'Times New Roman', serif;
+            height: 100vh;
+            width: 100vw;
+            position: relative;
+            overflow: hidden; /* Mencegah scroll bar supaya pas 1 layar */
+        }
+
+        /* --- NAVIGASI ATAS --- */
+        nav {
+            position: absolute;
+            top: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            z-index: 10;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            border: 1px solid white;
+            border-radius: 20px;
+            padding: 5px 25px;
+            font-size: 18px;
+            letter-spacing: 1px;
+        }
+
+        /* --- STYLING WADAH GAMBAR (PLACEHOLDER) --- */
+        /* --- STYLING WADAH GAMBAR (PLACEHOLDER) --- */
+        .wadah {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            /* HAPUS padding, border, dan background supaya murni cuma nampilin gambar */
+            padding: 0; 
+            border: none; 
+            background-color: transparent; 
+            
+            /* Tambahan biar rapi kalau gambarnya kebesaran */
+            overflow: hidden; 
+        }
+
+        /* Ini kunciannya biar gambar memenuhi wadah */
+        .wadah img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* 'cover' bikin gambar menuhin wadah tanpa mengubah proporsi. Kalau agak kepotong, ganti jadi 'fill' (tapi gambar bisa agak gepeng) atau 'contain' */
+        }
+
+        /* --- POSISI ELEMEN SESUAI GAMBAR --- */
+
+        /* Bendera Atas */
+        .bendera-kiri {
+            top: 0; left: 0;
+            width: 45%; height: 120px;
+            border-top: none; border-left: none;
+            border-radius: 0 0 50% 0;
+        }
+        .bendera-kanan {
+            top: 0; right: 0;
+            width: 45%; height: 120px;
+            border-top: none; border-right: none;
+            border-radius: 0 0 0 50%;
+        }
+
+        /* Judul Tengah (Happy Birthday + Kue Tingkat) */
+        .tulisan-tengah {
+            top: 25%; left: 50%;
+            transform: translateX(-50%);
+            width: 50%; height: 250px;
+        }
+
+        /* Elemen Kiri */
+        .kucing-kiri-atas {
+            top: 45%; left: 12%;
+            width: 120px; height: 120px;
+        }
+        .kucing-kiri-bawah {
+            top: 52%; left: 3%;
+            width: 100px; height: 100px;
+        }
+        .kado-kiri {
+            bottom: -5%; left: 5%;
+            width: 200px; height: 350px;
+        }
+
+        /* Elemen Bawah Tengah */
+        .kucing-afro {
+            bottom: 0; left: 28%;
+            width: 180px; height: 280px;
+        }
+        .kue-strawberry {
+            bottom: 2%; left: 45%;
+            width: 200px; height: 180px;
+        }
+        .kucing-kado {
+            bottom: 0; right: 28%;
+            width: 150px; height: 300px;
+        }
+
+        /* Elemen Kanan */
+        .kucing-gitar {
+            top: 45%; right: 8%;
+            width: 120px; height: 150px;
+        }
+        .kucing-kanan-bawah {
+            bottom: 15%; right: 15%;
+            width: 80px; height: 80px;
+        }
+        .cupcake-kanan {
+            bottom: 0; right: 5%;
+            width: 120px; height: 180px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="page2.html">home</a>
+        <a href="moment.html">Moment</a>
+        <a href="from-bb.html">contact</a>
+    </nav>
+
+    <div class="wadah bendera-kiri"><img src="assets/Halaman1/6.png" alt=""></div>
+    <div class="wadah bendera-kanan"><img src="assets/Halaman1/6kebalik.png" alt=""></div>
+
+    <div class="wadah tulisan-tengah"><img src="assets/Halaman1/5.png" alt="kado"></div>
+
+    <div class="wadah kucing-kiri-atas"><img src="assets/Halaman1/11.png" alt="Kucing Kiri Atas"></div>
+    <div class="wadah kucing-kiri-bawah"><img src="assets/Halaman1/10.png" alt="Kucing Kiri Bawah"></div>
+    <div class="wadah kado-kiri"><img src="assets/Halaman1/8.png" alt="Tumpukan Kado Kiri"></div>
+
+    <div class="wadah kucing-afro"><img src="assets/Halaman1/4.png" alt="Kucing Afro"></div>
+    <div class="wadah kue-strawberry"><img src="assets/Halaman1/2.png" alt="Kue Strawberry"></div>
+    <div class="wadah kucing-kado"><img src="assets/Halaman1/3.png" alt="Kucing Bawa Kado"></div>
+
+    <div class="wadah kucing-gitar"><img src="assets/Halaman1/9.png" alt="Kucing Gitar Kanan"></div>
+    <div class="wadah kucing-kanan-bawah"><img src="assets/Halaman1/12.png" alt="Kucing Kecil Kanan"></div>
+    <div class="wadah cupcake-kanan"><img src="assets/Halaman1/1.png" alt="Cupcake & Lilin Kanan"></div>
+
+</body>
+</html>

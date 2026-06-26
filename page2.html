@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moment - Page 2</title>
+    <style>
+        /* --- GAYA DASAR --- */
+        body {
+            background-color: #ff00ff; /* Warna pink magenta terang */
+            margin: 0;
+            padding: 0;
+            font-family: 'Times New Roman', serif;
+            height: 100vh;
+            width: 100vw;
+            position: relative;
+            overflow: hidden; 
+        }
+
+        /* --- NAVIGASI --- */
+        nav {
+            position: absolute;
+            top: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            z-index: 50;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            border: 1px solid white;
+            border-radius: 20px;
+            padding: 5px 25px;
+            font-size: 16px;
+            letter-spacing: 1px;
+            background-color: transparent;
+            transition: 0.3s;
+        }
+
+        /* Tombol yang lagi aktif */
+        nav a.active {
+            background-color: #d18a75; 
+            border-color: #d18a75;
+        }
+
+        /* --- STYLING ITEM (Wadah Gambar + Teks) --- */
+        .item {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .wadah {
+            background-color: transparent; /* Background bersih */
+            border: none; /* Garis tepi dihapus */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        /* Agar gambar transparan (PNG) tidak gepeng dan pas di wadah */
+        .wadah img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Gambar utuh, tidak kepotong */
+        }
+
+        /* Teks "Culture.jpg" di bawah gambar */
+        .teks-bawah {
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 8px;
+            font-size: 14px;
+        }
+
+        /* --- POSISI ELEMEN TENGAH --- */
+        
+        /* Tulisan Happy Birthday (Gambar 4) */
+        /* Tulisan Happy Birthday (Gambar 4) */
+        .center-title {
+            top: 2%; /* Aku naikin lagi biar nggak nabrak topi */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 900px; /* Bikin super gede (sebelumnya 450px) */
+            height: 400px; /* Tingginya juga disesuaikan */
+            z-index: 20;
+        }
+
+        /* Foto Muka di Tengah */
+        .center-photo {
+            top: 50%; 
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 180px; 
+            height: 180px; 
+            z-index: 5; /* Di bawah bingkai dekorasi */
+        }
+        
+        /* Khusus foto muka pakai cover biar penuh (jika bentuk aslinya bukan kotak) */
+        .center-photo .wadah img {
+            object-fit: cover; 
+        }
+
+        /* Bingkai Dekorasi (1.png - Topi, Petir, Cupcake) */
+        .center-frame {
+            top: 45%; 
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 260px; /* Lebarkan bingkai agar muat menutupi foto */
+            height: 380px; 
+            z-index: 10; /* Di atas foto muka */
+            pointer-events: none; /* Tidak menghalangi klik pada foto di bawahnya */
+        }
+
+        /* --- POSISI ELEMEN KIRI --- */
+        .char-tl1 { top: 25%; left: 12%; width: 80px; height: 100px; } /* Kelinci putih */
+        .char-tl2 { top: 22%; left: 25%; width: 70px; height: 120px; } /* Karakter pink */
+        .char-ml { top: 50%; left: 22%; width: 80px; height: 110px; } /* Kelinci gaun */
+        .char-bl1 { top: 65%; left: 11%; width: 90px; height: 120px; } /* Tudung hijau */
+        .char-bl2 { top: 75%; left: 30%; width: 70px; height: 100px; } /* Telepon biru */
+
+        /* --- POSISI ELEMEN KANAN --- */
+        .char-tr1 { top: 22%; right: 12%; width: 120px; height: 80px; } /* Amplop */
+        .char-tr2 { top: 25%; right: 28%; width: 80px; height: 100px; } /* Topi bunga */
+        .char-mr { top: 52%; right: 18%; width: 100px; height: 120px; } /* Kostum dino */
+        .char-br { top: 75%; right: 35%; width: 70px; height: 90px; } /* Anak rambut coklat */
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#" class="active">home</a> 
+        <a href="moment.html">Moment</a>
+        <a href="from-bb.html">From BB</a>
+    </nav>
+
+    <div class="item center-title">
+        <div class="wadah" style="width: 100%; height: 100%;">
+            <img src="assets/Halaman2/4.png" alt="Happy Birthday">
+        </div>
+    </div>
+    
+    <div class="item center-photo">
+        <div class="wadah" style="width: 50%; height: 50%;">
+            <img src="assets/Halaman2/2.jpeg" alt="Foto Profil">
+        </div>
+    </div>
+
+    <div class="item center-frame">
+        <div class="wadah" style="width: 100%; height: 100%;">
+            <img src="assets/Halaman2/1.png" alt="Frame">
+        </div>
+    </div>
+
+
+    <div class="item char-tl1">
+        <div class="wadah" style="width: 100%; height: 100%;"><img src="assets/Halaman2/10.png" alt="Char"></div>
+    </div>
+    <div class="item char-tl2">
+        <div class="wadah" style="width: 100%; height: 100%;"><img src="assets/Halaman2/7.png" alt="Char"></div>
+    </div>
+    <div class="item char-ml">
+        <div class="wadah" style="width: 100%; height: 100%;"><img src="assets/Halaman2/8.png" alt="Char"></div>
+    </div>
+    <div class="item char-bl1">
+        <div class="wadah" style="width: 100%; height: 100%;"><img src="assets/Halaman2/9.png" alt="Char"></div>
+    </div>
+    <div class="item char-bl2">
+        <div class="wadah" style="width: 100%; height: 100%;"><img src="assets/Halaman2/6.png" alt="Char"></div>
+    </div>
+
+
+    <div class="item char-tr1">
+        <div class="wadah" style="width: 100%; height: 100%;"><img src="assets/Halaman2/10.png" alt="Char"></div>
+    </div>
+    <div class="item char-tr2">
+        <div class="wadah" style="width: 100%; height: 100%;"><img src="assets/Halaman2/5.png" alt="Char"></div>
+    </div>
+    <div class="item char-mr">
+        <div class="wadah" style="width: 100%; height: 100%;"><img src="assets/Halaman1/11.png" alt="Char"></div>
+    </div>
+    <div class="item char-br">
+        <div class="wadah" style="width: 100%; height: 100%;"><img src="assets/Halaman1/9.png" alt="Char"></div>
+    </div>
+
+</body>
+</html>

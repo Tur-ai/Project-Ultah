@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form BB - Happy Birthday</title>
+    <style>
+        /* --- GAYA DASAR --- */
+        body {
+            background-color: #f4efeb; /* Warna krem tekstur kertas */
+            margin: 0;
+            padding: 0;
+            font-family: 'Times New Roman', serif;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* --- NAVIGASI --- */
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px 0;
+            position: relative;
+            z-index: 50;
+        }
+
+        nav a {
+            color: #333;
+            text-decoration: none;
+            border: 1px solid #333;
+            border-radius: 20px;
+            padding: 5px 25px;
+            font-size: 16px;
+            transition: 0.3s;
+            background-color: transparent;
+        }
+
+        nav a.active {
+            background-color: #7b6c65; /* Warna abu kecoklatan */
+            border-color: #7b6c65;
+            color: white;
+        }
+
+        /* --- KONTAINER UTAMA (BAGI 2 KOLOM) --- */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        /* --- KOLOM KIRI (KUMPULAN GAMBAR) --- */
+        .left-collage {
+            flex: 1;
+            min-width: 300px; /* Minimal lebar biar bisa turun di HP */
+            position: relative;
+            min-height: 700px; /* Kasih tinggi supaya gambar absolute nggak nabrak */
+        }
+
+        /* Styling dasar wadah gambar */
+        .wadah {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* background-color: rgba(0, 0, 0, 0.05); Sedikit transparan buat penanda */
+            border-radius: 10px;
+        }
+
+        .wadah img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        /* Posisi Gambar di Kolom Kiri */
+        .img-hat-boy { top: 5%; left: 10%; width: 140px; height: 180px; }
+        .img-star-boy { top: 0%; right: 10%; width: 220px; height: 250px; }
+        .img-snoopy-cupid { top: 40%; left: 0%; width: 120px; height: 150px; }
+        .img-couple-sketch { top: 38%; right: 20%; width: 180px; height: 180px; }
+        .img-boy-guitar { bottom: 15%; left: 15%; width: 120px; height: 160px; }
+        .img-girl-flower { bottom: 0%; left: 35%; width: 130px; height: 150px; }
+        .img-bouquet { bottom: 10%; right: 5%; width: 160px; height: 200px; }
+        .img-snoopy-cake { bottom: -2%; left: -5%; width: 80px; height: 100px; }
+
+
+        /* --- KOLOM KANAN (TEKS & UCAPAN) --- */
+        .right-content {
+            flex: 1;
+            min-width: 300px;
+            position: relative;
+            padding-top: 30px;
+        }
+
+        .header-title {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .header-title h1 {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin: 0;
+            font-weight: normal;
+        }
+
+        .img-envelope {
+            position: absolute;
+            right: 0;
+            top: 20px;
+            width: 140px;
+            height: 100px;
+        }
+
+        /* Area Paragraf */
+        .text-area {
+            position: relative;
+            font-family: sans-serif;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            text-align: justify;
+            z-index: 10;
+        }
+
+        /* Hiasan bunga di belakang teks */
+        .flower-bg-1 {
+            position: absolute;
+            top: -20px;
+            left: -30px;
+            width: 120px;
+            height: 100px;
+            opacity: 0.6; /* Dibuat agak transparan biar teks tetep kebaca */
+            z-index: -1;
+        }
+        
+        .flower-bg-2 {
+            position: absolute;
+            top: 30%;
+            right: -20px;
+            width: 100px;
+            height: 100px;
+            opacity: 0.5;
+            z-index: -1;
+        }
+
+        /* Dekorasi Bawah Kanan */
+        .bottom-decor {
+            position: relative;
+            height: 150px;
+            margin-top: 20px;
+        }
+
+        .img-small-boy {
+            position: absolute;
+            bottom: 0;
+            left: 20%;
+            width: 70px;
+            height: 90px;
+        }
+
+        .img-hbd-text {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 500px;
+            height: 200px;
+        }
+
+
+        /* --- MEDIA QUERIES (UNTUK HP) --- */
+        @media (max-width: 768px) {
+            .left-collage {
+                min-height: 500px; /* Kecilin area gambar di HP */
+            }
+            .header-title h1 {
+                font-size: 2.5rem;
+            }
+            .img-envelope {
+                position: relative;
+                display: block;
+                margin-top: 10px;
+                top: 0;
+            }
+            /* Skala gambar kiri di HP biar gak terlalu penuh */
+            .left-collage .wadah {
+                transform: scale(0.8);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="page2.html">home</a>
+        <a href="moment.html">Moment</a>
+        <a href="from-bb.html" class="active">Form BB</a>
+    </nav>
+
+    <div class="container">
+
+        <div class="left-collage">
+            
+            <div class="wadah img-hat-boy"><img src="assets/halaman4/4.png" alt=""></div>
+            <div class="wadah img-star-boy"><img src="assets/halaman4/5.png" alt=""></div>
+            <div class="wadah img-snoopy-cupid"><img src="assets/halaman4/9.png" alt=""></div>
+            <div class="wadah img-couple-sketch"><img src="assets/halaman4/11.png" alt=""></div>
+            <div class="wadah img-boy-guitar"><img src="assets/halaman4/2.png" alt=""></div>
+            <div class="wadah img-girl-flower"><img src="assets/halaman4/3.png" alt=""></div>
+            <div class="wadah img-bouquet"><img src="assets/halaman4/13.png" alt="Buket Bunga"></div>
+            <div class="wadah img-snoopy-cake"><img src="assets/halaman4/14.jpeg" alt="Snoopy Kue"></div>
+
+        </div>
+
+        <div class="right-content">
+            
+            <div class="header-title">
+                <h1>Happy Birthday<br>my girlfriend</h1>
+                <div class="wadah img-envelope"><img src="assets/halaman4/1.png" alt="Amplop">
+            </div>
+
+            <div class="text-area">
+                <div class="wadah flower-bg-1"><img src="assets/halaman4/8.png" alt=""></div>
+                <div class="wadah flower-bg-2"><img src="assets/halaman4/10.png" alt=""></div>
+
+                <p>
+                    Selamat ulang tahun ke 19 buat pacar aku, semoga sehat selalu, 
+                    panjang umur nyaa, di mudah kan dalam hall apapun dan 
+                    semangat buat kuliah nyaa semogaa kamu di sana bisa dapet temen 
+                    temen yang baik kayak pas sma, terus semangat buat menjalani 
+                    kegiatan perkuliahan nyaa. Terima kasih untuk satu bulan penuh ini 
+                    bersama kamu aku sangat menikmati di setiap moment dimana kita 
+                    bertemu, aku seneng bangett bisa menjadi pacarr kamu. banyakk 
+                    hall baikk yang aku sukai dari kamuu thank you form being my 
+                    girlfriend i soo luky have you in my live. Love youu pacar aku yang 
+                    cantikk bangett imupp lucu gemesg pipi cubyy yang baikk hati kayak 
+                    bidadari angell my princess and my queen from kingdom of my 
+                    heartt
+                </p>
+            </div>
+
+            <div class="bottom-decor">
+                <div class="wadah img-small-boy"><img src="assets/halaman4/6.png" alt=""></div>
+                <div class="wadah img-hbd-text"><img src="assets/halaman4/12.png" alt=""></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
